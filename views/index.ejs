@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <div class="blur"></div>
+    <div class="title">
+        <h1>Mini Message Board</h1>
+    </div>
+
+    <div class="message-container">
+        <ul>
+            <% messages.forEach(message=> {%>
+                <div class="chat-box">
+                    <li class="username">
+                        <%= message.user %>
+                    </li>
+                    <li class="text">
+                        <%= message.text %>
+                    </li>
+                    <li class="added">
+                        <%= message.added %> &#x2713;&#x2713;
+                    </li>
+                </div>
+                    <% }) %>
+        
+        </ul>
+    </div>
+    <div class="add-new-message">
+        <form action="/new">
+            <button id="btnNewMessage">Add New Message</button>
+        </form>
+    </div>
+
+
+
+
+</body>
+
+</html>

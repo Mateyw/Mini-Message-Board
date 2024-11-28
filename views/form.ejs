@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="form.css" type="text/css">
+</head>
+
+<body>
+    <div class="title">
+        <h1>New Message</h1>
+    </div>
+
+    <div class="form-container">
+        <form method="POST" action="/new">
+            <label for="messageUser">User</label>
+            <input type="text" name="messageUser" id="messageUser" maxlength="30" placeholder="Enter a username between 1 and 30 characters" required>
+            <label for="messageText">Message</label>
+            <textarea name="messageText" id="messageText" cols="10" rows="10" placeholder="Enter a message" required></textarea>
+            <button class="button-25" role="button">Send</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

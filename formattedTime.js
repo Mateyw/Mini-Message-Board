@@ -16,11 +16,10 @@ module.exports = function getFormattedTime() {
         "6": "Saturday"
     };
 
-    // Add leading zeros if necessary
     hours = hours < 10 ? '0' + hours : hours;
     minutes = minutes < 10 ? '0' + minutes : minutes;
 
-    // Format as HH:mm
+    // format as HH:mm,Weekday Name
     const weekdayName = dayWeekdayMap[weekday];
     return `${hours}:${minutes}, ${weekdayName}`;
 };

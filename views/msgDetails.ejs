@@ -4,7 +4,7 @@
     <title>
         <%= title %>
     </title>
-    <link rel="stylesheet" href="details.css" type="text/css">
+    <link rel="stylesheet" href="/details.css" type="text/css">
 </head>
 
 <body>
@@ -15,16 +15,36 @@
     <div class="details-container">
 
         <label for="messageUser">User</label>
-        <p id="messageUser">name of User</p>
+        <p id="messageUser">@<%= message.user %></p>
         <label for="messageText">Message</label>
-        <p id="messageText">message of user</p>
+        <p id="messageText">"<%= message.text %>"</p>
+        <label for="messageAdded">Date</label>
+        <p id="messageAdded"><%= message.added %></p>
 
         <form action="/">
             <button id="btnReturn">Return</button>
         </form>
+        <!-- or -->
+         <!-- <a href="/">Return</a> -->
     </div>
 
 
 </body>
 
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Message Details</h1>
+    <p><strong>User:</strong> <%= message.user %></p>
+    <p><strong>Message:</strong> <%= message.text %></p>
+    <p><strong>Added:</strong> <%= message.added %></p>
+    <a href="/">Back to Messages</a>
+</body>
+</html>
+ -->

@@ -1,8 +1,15 @@
 <html>
 
 <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/handleDeleteMessage.js" defer></script>
+
 </head>
 
 <body>
@@ -14,7 +21,7 @@
     <div class="message-container">
         <ul>
             <% messages.forEach(message=> {%>
-                <div class="chat-box">
+                <div class="chat-box" data-id="<%= message.id %>">
                     <li class="username">
                         <%= message.user %>
                     </li>
@@ -24,9 +31,15 @@
                     <li class="added">
                         <%= message.added %> &#x2713;&#x2713;
                     </li>
+                    <li class="details-container">
+                        <a href="/details/<%= message.id %>" id="btnDetails">Details</a>
+                    </li>
+                    <div class="icon-container">
+                        <i class="fa-solid fa-xmark btn-delete" id="icon-x"></i>
+                    </div>
                 </div>
-                    <% }) %>
-        
+                <% }) %>
+
         </ul>
     </div>
     <div class="add-new-message">
@@ -34,9 +47,6 @@
             <button id="btnNewMessage">Add New Message</button>
         </form>
     </div>
-
-
-
 
 </body>
 

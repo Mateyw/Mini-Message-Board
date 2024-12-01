@@ -70,6 +70,11 @@ div.chat-box {
     overflow-wrap: break-word; /* Allow words to break to the next line if too long */
     word-wrap: break-word; /* For legacy support */
     white-space: normal; /* Allow normal line breaks */
+    position: relative;
+}
+
+div.chat-box:last-child{
+    margin-bottom: 0px;
 }
 
 div.chat-box > li.text {
@@ -91,6 +96,7 @@ li {
 
 li:not(.username) {
     font-size: 1rem;
+    
 }
 
 li.username {
@@ -98,6 +104,7 @@ li.username {
     font-weight: 600;
     margin-bottom: 2.5px;
     font-size: 1.1rem;
+    width: calc(100% - 10%); 
 }
 
 li.added {
@@ -106,6 +113,50 @@ li.added {
     color: lightslategrey;
     font-style: italic;
 }
+
+.details-container{
+    margin-top: 10px;
+    background-color: #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 1px 3px;
+}
+
+#btnDetails{
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+    font-weight: 500;
+}
+
+.icon-container{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 17px;
+    width: 17px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#icon-x{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+#icon-x:hover{
+    cursor: pointer;
+}
+
+
 
 
 #btnNewMessage {
